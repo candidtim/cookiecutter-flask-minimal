@@ -11,14 +11,16 @@ Install [cookiecutter](https://github.com/audreyr/cookiecutter):
 
     pip install --user cookiecutter
 
-And then, create your application from this template:
+Create your application from this template:
 
     cookiecutter https://github.com/candidtim/cookiecutter-flask-minimal.git
 
-All set! Run the application now:
+All set! Run the application:
 
     cd yourapplication
     make run
+
+And then open it at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 
 ## Features
@@ -58,7 +60,7 @@ Configuration of this entire project template is based on
 follow Flask documentation precisely.
 
 
-## Possible future improvements
+# Possible future improvements
 
  - create cookicutter template with Ansible project for deployment of projects generated from this template
  - add *optional* (how?) configuration for e-mail logging and/or Sentry (maybe just a Git patch file to apply)
