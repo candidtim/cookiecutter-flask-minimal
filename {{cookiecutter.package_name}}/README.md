@@ -1,35 +1,6 @@
 # {{cookiecutter.application_name}}
 
-This is a **minimal** [Flask](http://flask.pocoo.org) project, with no external dependencies except for Flask
-itself. It doesn't impose how to implement the web application, but it is **ready for production** deployment from the
-start.
-
-Included:
-
- - minimal production-ready Flask application: root package, sample static resource, sample template and an index view,
-   as per [Larger Applications](http://flask.pocoo.org/docs/0.12/patterns/packages/)
-
- - setuptools configuration to package and release the application, as well as to develop locally, as per
-   [Deploying with Setuptools](http://flask.pocoo.org/docs/0.12/patterns/distribute/)
-
- - configuration system, as per [Configuration Handling](http://flask.pocoo.org/docs/0.12/config/#config)
-
- - basic logging configuration, as per [Logging to a File](http://flask.pocoo.org/docs/0.12/errorhandling/#logging-to-a-file)
-
- - Makefile with few typical tasks automated (see below for details)
-
-Not included:
-
- - everything else: there is no SQLAlchemy, or MongoKit, or Bootstrap CSS, or React, or whatever else here;
-   it is up to you to chose how to implement your application
-
- - no choice on how to [deploy the application](http://flask.pocoo.org/docs/0.12/deploying/) is made, no WSGI container
-   is chosen; if you deploy to your own host, make sure to
-   [use an WSGI container](http://flask.pocoo.org/docs/0.12/deploying/wsgi-standalone/) instead of Flask development
-   server; see below for more ideas about deployment
-
- - no configuration for testing, as there are too many ways to do it and it is a matter of personal choice; check out
-   [Testing Flask Applications](http://flask.pocoo.org/docs/0.12/testing/) for a quick start if in doubt
+{{cookiecutter.application_name}} description
 
 
 ## Dependencies
@@ -73,16 +44,3 @@ Most likely it will also run behind a
 
 Check out [Deploying with Fabric](http://flask.pocoo.org/docs/0.12/patterns/fabric/#fabric-deployment) on one of the
 possible ways to automate the deployment.
-
-
-# Attributions
-
-Configuration of this entire project template is based on
-[Flask documentation](http://flask.pocoo.org/docs/). Please, note however, that this template is not guaranteed to
-follow Flask documentation precisely.
-
-
-## TODOs
-
- - TODO: patchfile to add e-mail logging and/or Sentry
- - TODO: create sample project with Ansible for deployment
