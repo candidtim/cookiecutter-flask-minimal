@@ -37,6 +37,9 @@ Included:
 
  - basic logging configuration, as per [Logging to a File](http://flask.pocoo.org/docs/0.12/errorhandling/#logging-to-a-file)
 
+ - sample test and configuration necessary to run the tests, as per
+   [The Testing Skeleton](http://flask.pocoo.org/docs/0.12/testing/#the-testing-skeleton)
+
  - Makefile with few typical tasks automated (see generated README for details)
 
 Not included:
@@ -62,5 +65,6 @@ follow Flask documentation precisely.
 
 # Possible future improvements
 
- - create cookicutter template with Ansible project for deployment of projects generated from this template
- - add *optional* (how?) configuration for e-mail logging and/or Sentry (maybe just a Git patch file to apply)
+ - create accompanying cookiecutter template with Ansible project for deployment
+ - add optional configuration for e-mail error reporting and/or Sentry (using choice variables and hooks)
+ - add choice for testng framework (and also make it entirely optional)

@@ -29,7 +29,9 @@ For example, on Ubuntu:
 
  - run development server in debug mode: `make run`; Flask will restart if source code is modified
 
- - release a production version: `make release`
+ - run tests: `make test`
+
+ - release a production version: `make release` (will run tests first)
 
  - to remove virtualenv and built distributions: `make clean`
 
