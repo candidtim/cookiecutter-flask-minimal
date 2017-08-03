@@ -1,0 +1,6 @@
+.venv/
+*.pyc
+*.egg-info/
+dist/
+settings.cfg
+*.log*
