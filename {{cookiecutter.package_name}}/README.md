@@ -1,4 +1,4 @@
-# yourapplication
+# {{cookiecutter.application_name}}
 
 This is a **minimal** [Flask](http://flask.pocoo.org) project, with no external dependencies except for Flask
 itself. It doesn't impose how to implement the web application, but it is **ready for production** deployment from the
@@ -44,7 +44,7 @@ For example, on Ubuntu:
 
 ## Development environment and release process
 
- - create virtualenv with Flask and yourapplication installed into it (latter is installed in
+ - create virtualenv with Flask and {{cookiecutter.application_name}} installed into it (latter is installed in
    [develop mode](http://setuptools.readthedocs.io/en/latest/setuptools.html#development-mode) which allows
    modifying source code directly without a need to re-install the app): `make venv`
 
@@ -64,8 +64,8 @@ For example, on Ubuntu:
 ## Deployment
 
 Generally the idea is to build a package (`make release`), deliver it to a server (`scp ...`),
-install it (`pip install yourapplication.tar.gz`), ensure that configuration file exists and
-`yourapplication_SETTINGS` environment variable points to it, ensure that user has access to the
+install it (`pip install {{cookiecutter.package_name}}.tar.gz`), ensure that configuration file exists and
+`{{cookiecutter.package_name.upper()}}_SETTINGS` environment variable points to it, ensure that user has access to the
 working directory to create and write log files in it, and finally run a
 [WSGI container](http://flask.pocoo.org/docs/0.12/deploying/wsgi-standalone/) with the application.
 Most likely it will also run behind a
