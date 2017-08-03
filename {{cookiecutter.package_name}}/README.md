@@ -2,8 +2,12 @@
 
 {{cookiecutter.application_name}} description
 
+## Quick Start
 
-## Dependencies
+    make run
+
+
+## Prerequisites
 
 This is built to be used with Python 3. Update `Makefile` to switch to Python 2 if needed.
 

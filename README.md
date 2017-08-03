@@ -15,6 +15,11 @@ And then, create your application from this template:
 
     cookiecutter https://github.com/candidtim/cookiecutter-flask-minimal.git
 
+All set! Run the application now:
+
+    cd yourapplication
+    make run
+
 
 ## Features
 
