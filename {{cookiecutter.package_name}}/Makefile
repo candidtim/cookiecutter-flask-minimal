@@ -10,7 +10,7 @@ run: venv
 	FLASK_APP={{cookiecutter.package_name}} {{cookiecutter.package_name.upper()}}_SETTINGS=../settings.cfg venv/bin/flask run
 
 test: venv
-	{{cookiecutter.package_name.upper()}}_SETTINGS=../settings.cfg venv/bin/python tests/test_app.py
+	{{cookiecutter.package_name.upper()}}_SETTINGS=../settings.cfg venv/bin/python tests/test_{{cookiecutter.package_name}}.py
 
 release: venv test
 	venv/bin/python setup.py sdist

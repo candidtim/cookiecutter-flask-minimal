@@ -29,7 +29,7 @@ For example, on Ubuntu:
 
  - run development server in debug mode: `make run`; Flask will restart if source code is modified
 
- - run tests: `make test`
+ - run tests: `make test` (see also: [Testing Flask Applications](http://flask.pocoo.org/docs/0.12/testing/))
 
  - release a production version: `make release` (will run tests first)
 
