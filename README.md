@@ -52,9 +52,6 @@ Not included:
    [use an WSGI container](http://flask.pocoo.org/docs/0.12/deploying/wsgi-standalone/) instead of Flask development
    server; see generated README for more ideas about deployment
 
- - no configuration for testing, as there are too many ways to do it and it is a matter of personal choice; check out
-   [Testing Flask Applications](http://flask.pocoo.org/docs/0.12/testing/) for a quick start if in doubt
-
 
 # Attributions
 
@@ -68,3 +65,4 @@ follow Flask documentation precisely.
  - create accompanying cookiecutter template with Ansible project for deployment
  - add optional configuration for e-mail error reporting and/or Sentry (using choice variables and hooks)
  - add choice for testng framework (and also make it entirely optional)
+ - find a cross-platform replacement to a Makefile
