@@ -12,5 +12,5 @@ run: venv
 test: venv
 	{{cookiecutter.package_name.upper()}}_SETTINGS=../settings.cfg venv/bin/python -m unittest discover -s tests
 
-release: venv test
+sdist: venv test
 	venv/bin/python setup.py sdist

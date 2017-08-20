@@ -31,7 +31,7 @@ For example, on Ubuntu:
 
  - run tests: `make test` (see also: [Testing Flask Applications](http://flask.pocoo.org/docs/0.12/testing/))
 
- - release a production version: `make release` (will run tests first)
+ - create source distribution: `make sdist` (will run tests first)
 
  - to remove virtualenv and built distributions: `make clean`
 
