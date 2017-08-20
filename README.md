@@ -48,9 +48,9 @@ Not included:
    it is up to you to chose how to implement your application
 
  - no choice on how to [deploy the application](http://flask.pocoo.org/docs/0.12/deploying/) is made, no WSGI container
-   is chosen; if you deploy to your own host, make sure to
-   [use a WSGI container](http://flask.pocoo.org/docs/0.12/deploying/wsgi-standalone/) instead of Flask development
-   server; see generated README for more ideas about deployment
+   is chosen; if you are interested in an out-of-the-box deployment automation, check out accompanying
+   [`cookiecutter-flask-ansible`](https://github.com/candidtim/cookiecutter-flask-ansible); see generated
+   README for more ideas about deployment
 
 
 # Contributions
@@ -74,7 +74,6 @@ follow Flask documentation precisely.
 
 # Possible future improvements
 
- - create accompanying cookiecutter template with Ansible project for deployment (in progress)
  - add optional configuration for e-mail error reporting and/or Sentry
  - add choice for testng framework (and also make it entirely optional)
  - find a cross-platform replacement to a Makefile

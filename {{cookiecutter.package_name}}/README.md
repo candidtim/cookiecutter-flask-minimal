@@ -44,13 +44,16 @@ For example, on Ubuntu:
 
 ## Deployment
 
-Generally the idea is to build a package (`make release`), deliver it to a server (`scp ...`),
+If you are interested in an out-of-the-box deployment automation, check out accompanying
+[`cookiecutter-flask-ansible`](https://github.com/candidtim/cookiecutter-flask-ansible).
+
+Or, check out [Deploying with Fabric](http://flask.pocoo.org/docs/0.12/patterns/fabric/#fabric-deployment) on one of the
+possible ways to automate the deployment.
+
+In either case, generally the idea is to build a package (`make sdist`), deliver it to a server (`scp ...`),
 install it (`pip install {{cookiecutter.package_name}}.tar.gz`), ensure that configuration file exists and
 `{{cookiecutter.package_name.upper()}}_SETTINGS` environment variable points to it, ensure that user has access to the
 working directory to create and write log files in it, and finally run a
 [WSGI container](http://flask.pocoo.org/docs/0.12/deploying/wsgi-standalone/) with the application.
-Most likely it will also run behind a
+And, most likely, it will also run behind a
 [reverse proxy](http://flask.pocoo.org/docs/0.12/deploying/wsgi-standalone/#proxy-setups).
-
-Check out [Deploying with Fabric](http://flask.pocoo.org/docs/0.12/patterns/fabric/#fabric-deployment) on one of the
-possible ways to automate the deployment.
