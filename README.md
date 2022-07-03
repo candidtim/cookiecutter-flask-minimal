@@ -82,12 +82,6 @@ If you do a change, use `make test` from root directory to test the updated temp
 # Attributions
 
 Configuration of this entire project template is based on
-[Flask documentation](http://flask.pocoo.org/docs/).
+[Flask documentation](https://flask.palletsprojects.com/en/2.1.x/).
 Please, note however, that this template is not guaranteed to follow Flask
 documentation precisely.
-
-# Possible future improvements
-
- - add optional configuration for e-mail error reporting and/or Sentry
- - add choice for testng framework (and also make it entirely optional)
- - find a cross-platform replacement to a Makefile

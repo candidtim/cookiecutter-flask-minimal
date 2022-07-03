@@ -29,7 +29,7 @@ Python >=3.7
  - `make clean`: removes virtualenv and build artifacts
 
  - add application dependencies in `pyproject.toml` under `project.dependencies`;
-   add development development under `project.optional-dependencies.*`
+   add development dependencies under `project.optional-dependencies.*`
 
  - to modify configuration, pass it in environment variables prefixed with
    `FLASK_`; e.g., `FLASK_DEBUG`, etc.;
@@ -38,10 +38,10 @@ Python >=3.7
 
 Default configuration is loaded from `{{cookiecutter.package_name}}.default_settings` and can be
 overriden by environment variables with a `FLASK_` prefix. See
-[Configuring from Environment Variables](https://flask.palletsprojects.com/en/2.1.x/config/#configuring-from-environment-variables)
+[Configuring from Environment Variables](https://flask.palletsprojects.com/en/2.1.x/config/#configuring-from-environment-variables).
 
 Consider using
-(dotenv)[https://flask.palletsprojects.com/en/2.1.x/cli/#environment-variables-from-dotenv]
+[dotenv](https://flask.palletsprojects.com/en/2.1.x/cli/#environment-variables-from-dotenv).
 
 ## Deployment
 
