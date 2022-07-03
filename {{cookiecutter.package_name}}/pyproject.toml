@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{cookiecutter.package_name}}"
+version = "1.0.0"
+requires-python = ">=3.7"
+dependencies = [
+    "Flask>=2.1",
+]
+
+[project.optional-dependencies]
+tests = [
+    "pytest>=7,<8",
+    "pytest-runner>=6,<7",
+]
+
+[tool.setuptools.package-data]
+"*" = ["**/static/**/*", "**/templates/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

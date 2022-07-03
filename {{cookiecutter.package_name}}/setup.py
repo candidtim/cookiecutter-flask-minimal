@@ -1,13 +1,7 @@
-from setuptools import setup, find_packages
+# This project uses pyproject.toml for all configuration.
+# This file is for compatibility only.
+# See https://setuptools.pypa.io/en/latest/userguide/quickstart.html#development-mode
 
-setup(
-    name='{{cookiecutter.package_name}}',
-    version='1.0',
-    long_description=__doc__,
-    packages=find_packages(),
-    include_package_data=True,
-    zip_safe=False,
-    install_requires=[
-        'flask',
-    ],
-)
+from setuptools import setup
+
+setup()

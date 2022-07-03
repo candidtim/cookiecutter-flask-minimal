@@ -1,6 +1,10 @@
+# Python
+__pycache__/
+
+# Files created by this set up:
 venv/
-*.pyc
-*.egg-info/
+build/
 dist/
-settings.cfg
-*.log*
+*.egg-info/
+.pytest_cache/
+.mypy_cache/

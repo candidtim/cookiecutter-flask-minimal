@@ -1,9 +1,9 @@
-from flask import render_template
+from flask import current_app as app, render_template, Blueprint
 
-from {{cookiecutter.package_name}} import app
+bp = Blueprint("root", __name__)
 
 
-@app.route('/')
+@bp.route("/")
 def index():
-    app.logger.warning('sample message')
-    return render_template('index.html')
+    app.logger.warning("sample message")
+    return render_template("index.html")

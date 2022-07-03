@@ -1,17 +1,38 @@
-import os
+import logging.config
 from flask import Flask
+from {{cookiecutter.package_name}} import views
 
-app = Flask(__name__)
-app.config.from_object('{{cookiecutter.package_name}}.default_settings')
-app.config.from_envvar('{{cookiecutter.package_name.upper()}}_SETTINGS')
 
-if not app.debug:
-    import logging
-    from logging.handlers import TimedRotatingFileHandler
-    # https://docs.python.org/3.6/library/logging.handlers.html#timedrotatingfilehandler
-    file_handler = TimedRotatingFileHandler(os.path.join(app.config['LOG_DIR'], '{{cookiecutter.package_name}}.log'), 'midnight')
-    file_handler.setLevel(logging.WARNING)
-    file_handler.setFormatter(logging.Formatter('<%(asctime)s> <%(levelname)s> %(message)s'))
-    app.logger.addHandler(file_handler)
+def configure_logging():
+    logging.config.dictConfig(
+        {
+            "version": 1,
+            "formatters": {
+                "default": {
+                    "format": "[%(asctime)s] %(levelname)s in %(module)s: %(message)s",
+                }
+            },
+            "handlers": {
+                "wsgi": {
+                    "class": "logging.StreamHandler",
+                    "stream": "ext://sys.stdout",
+                    "formatter": "default",
+                }
+            },
+            "root": {"level": "INFO", "handlers": ["wsgi"]},
+        }
+    )
 
-import {{cookiecutter.package_name}}.views
+
+def create_app(config_overrides=None):
+    configure_logging()  # should be configured before any access to app.logger
+    app = Flask(__name__)
+    app.config.from_object("{{cookiecutter.package_name}}.default_settings")
+    app.config.from_prefixed_env()
+
+    if config_overrides is not None:
+        app.config.from_mapping(config_overrides)
+
+    app.register_blueprint(views.bp)
+
+    return app

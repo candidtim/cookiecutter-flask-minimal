@@ -1,2 +1,0 @@
-recursive-include {{cookiecutter.package_name}}/templates *
-recursive-include {{cookiecutter.package_name}}/static *

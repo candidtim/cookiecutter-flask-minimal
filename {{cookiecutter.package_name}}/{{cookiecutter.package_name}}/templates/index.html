@@ -5,7 +5,75 @@
     <title>{{cookiecutter.application_name}}</title>
     {% raw %}<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">{% endraw %}
   </head>
-  <body>
-    Welcome to {{cookiecutter.application_name}}
+  <body class="message">
+    <h1>It works!</h1>
+    <h2>Next steps</h2>
+    <p>
+      The development environment is now set up and you can start coding! Check
+      out the <code>README.md</code> for the development environment usage.
+    </p>
+    <p>
+      You may also consider configuring linters (e.g.,
+      <a href="https://flake8.pycqa.org/en/latest/">
+        flake8</a>),
+      code formatting (e.g.,
+      <a href="https://www.geeksforgeeks.org/python-code-formatting-using-black/">
+        black</a>), and typing:
+      <a href="https://docs.python.org/3/library/typing.html">
+        declare the types</a> and use
+      <a href="http://mypy-lang.org/">
+        mypy</a>.
+    </p>
+    <p>
+      If you are new to Flask, both
+      <a href="https://flask.palletsprojects.com/en/2.1.x/quickstart/">
+        Quickstart</a>
+      and
+      <a href="https://flask.palletsprojects.com/en/2.1.x/tutorial/">
+        Tutorial</a>
+      are great resources to get up and running quickly.
+    </p>
+    <p>
+      Check out Flask documentation for more
+      <a href="https://flask.palletsprojects.com/en/2.1.x/patterns/">
+        patterns</a>
+      such as using SQL DB or Mongo DB, making a single-page application and
+      many more features.
+    </p>
+    <p>
+      When you are ready to deploy, you may want to consider these:
+    </p>
+    <ul>
+      <li>
+        Depending on the target infrastructure, configure the
+        <a href="https://flask.palletsprojects.com/en/2.1.x/deploying/">
+          deployment,
+        </a>
+      </li>
+      <ul>
+        <li>
+          ... and set a
+          <a href="https://flask.palletsprojects.com/en/2.1.x/tutorial/deploy/#configure-the-secret-key">
+            <code>SECRET_KEY</code></a>
+          in production.
+        </li>
+      </ul>
+      <li>
+        Depending on the deployment model, you may want to change the
+        <a href="https://flask.palletsprojects.com/en/2.1.x/logging/">
+          logging configuration</a>, and
+        <a href="https://flask.palletsprojects.com/en/2.1.x/config/">
+          how the configuration works</a>.
+      </li>
+      <li>Decide how to
+        <a href="https://flask.palletsprojects.com/en/2.1.x/errorhandling/">
+          handle errors</a>.
+      </li>
+      <li>
+        Consider your application
+        <a href="https://flask.palletsprojects.com/en/2.1.x/security/">
+          security</a>.
+      </li>
+    </ul>
   </body>
 </html>

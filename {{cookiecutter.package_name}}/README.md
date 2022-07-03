@@ -10,50 +10,46 @@ Run the application:
 
 And open it in the browser at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
-
 ## Prerequisites
 
-This is built to be used with Python 3. Update `Makefile` to switch to Python 2 if needed.
+Python >=3.7
 
-Some Flask dependencies are compiled during installation, so `gcc` and Python header files need to be present.
-For example, on Ubuntu:
+## Development environment
 
-    apt install build-essential python3-dev
+ - `make venv`: creates a virtualenv with dependencies and this application
+   installed (latter is installed in [development mode](http://setuptools.readthedocs.io/en/latest/setuptools.html#development-mode))
 
+ - `make run`: runs a development server in debug mode (changes in source code
+   are reloaded automatically)
 
-## Development environment and release process
+ - `make test`: runs tests (see also: [Testing Flask Applications](https://flask.palletsprojects.com/en/2.1.x/testing/))
 
- - create virtualenv with Flask and {{cookiecutter.application_name}} installed into it (latter is installed in
-   [develop mode](http://setuptools.readthedocs.io/en/latest/setuptools.html#development-mode) which allows
-   modifying source code directly without a need to re-install the app): `make venv`
+ - `make dist`: creates a wheel distribution (will run tests first)
 
- - run development server in debug mode: `make run`; Flask will restart if source code is modified
+ - `make clean`: removes virtualenv and build artifacts
 
- - run tests: `make test` (see also: [Testing Flask Applications](http://flask.pocoo.org/docs/0.12/testing/))
+ - add application dependencies in `pyproject.toml` under `project.dependencies`;
+   add development development under `project.optional-dependencies.*`
 
- - create source distribution: `make sdist` (will run tests first)
+ - to modify configuration, pass it in environment variables prefixed with
+   `FLASK_`; e.g., `FLASK_DEBUG`, etc.;
 
- - to remove virtualenv and built distributions: `make clean`
+## Configuration
 
- - to add more python dependencies: add to `install_requires` in `setup.py`
+Default configuration is loaded from `{{cookiecutter.package_name}}.default_settings` and can be
+overriden by environment variables with a `FLASK_` prefix. See
+[Configuring from Environment Variables](https://flask.palletsprojects.com/en/2.1.x/config/#configuring-from-environment-variables)
 
- - to modify configuration in development environment: edit file `settings.cfg`; this is a local configuration file
-   and it is *ignored* by Git - make sure to put a proper configuration file to a production environment when
-   deploying
-
+Consider using
+(dotenv)[https://flask.palletsprojects.com/en/2.1.x/cli/#environment-variables-from-dotenv]
 
 ## Deployment
 
-If you are interested in an out-of-the-box deployment automation, check out accompanying
-[`cookiecutter-flask-ansible`](https://github.com/candidtim/cookiecutter-flask-ansible).
+See [Deploying to Production](https://flask.palletsprojects.com/en/2.1.x/deploying/).
 
-Or, check out [Deploying with Fabric](http://flask.pocoo.org/docs/0.12/patterns/fabric/#fabric-deployment) on one of the
-possible ways to automate the deployment.
+You may use the distribution (`make dist`) to publish it to a package index,
+deliver to your server, or copy in your `Dockerfile`, and insall it with `pip`.
 
-In either case, generally the idea is to build a package (`make sdist`), deliver it to a server (`scp ...`),
-install it (`pip install {{cookiecutter.package_name}}.tar.gz`), ensure that configuration file exists and
-`{{cookiecutter.package_name.upper()}}_SETTINGS` environment variable points to it, ensure that user has access to the
-working directory to create and write log files in it, and finally run a
-[WSGI container](http://flask.pocoo.org/docs/0.12/deploying/wsgi-standalone/) with the application.
-And, most likely, it will also run behind a
-[reverse proxy](http://flask.pocoo.org/docs/0.12/deploying/wsgi-standalone/#proxy-setups).
+You must set a
+[SECRET_KEY](https://flask.palletsprojects.com/en/2.1.x/tutorial/deploy/#configure-the-secret-key)
+in production to a secret and stable value.

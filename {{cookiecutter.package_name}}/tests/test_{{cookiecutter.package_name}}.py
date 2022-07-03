@@ -1,17 +1,20 @@
-import unittest
-
-import {{cookiecutter.package_name}}
-
-
-class {{cookiecutter.package_name.capitalize()}}TestCase(unittest.TestCase):
-
-    def setUp(self):
-        self.app = {{cookiecutter.package_name}}.app.test_client()
-
-    def test_index(self):
-        rv = self.app.get('/')
-        self.assertIn('Welcome to {{cookiecutter.application_name}}', rv.data.decode())
+import pytest
+from {{cookiecutter.package_name}} import create_app
 
 
-if __name__ == '__main__':
-    unittest.main()
+@pytest.fixture
+def app():
+    app = create_app({"TESTING": True})
+    # set up here
+    yield app
+    # tear down here
+
+
+@pytest.fixture
+def client(app):
+    return app.test_client()
+
+
+def test_index(client):
+    response = client.get("/")
+    assert b"It works!" in response.data
