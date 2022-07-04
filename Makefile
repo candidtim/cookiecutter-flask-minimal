@@ -4,6 +4,6 @@ clean:
 	rm -rf /tmp/yourapplication/
 
 test: clean
-	cookiecutter . --output-dir /tmp --no-input && \
+	cookiecutter . --output-dir /tmp --replay --replay-file test-config.json && \
 	cd /tmp/yourapplication && \
-	make test
+	make dist

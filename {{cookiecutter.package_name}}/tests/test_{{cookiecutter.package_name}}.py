@@ -1,4 +1,5 @@
 import pytest
+
 from {{cookiecutter.package_name}} import create_app
 
 

@@ -1,4 +1,8 @@
 {
   "application_name": "Your Application",
-  "package_name": "yourapplication"
+  "package_name": "yourapplication",
+  "use_flake8": "n",
+  "use_black": "n",
+  "use_isort": "n",
+  "use_mypy": "n"
 }

@@ -22,6 +22,19 @@ Python >=3.7
  - `make run`: runs a development server in debug mode (changes in source code
    are reloaded automatically)
 
+{%- if cookiecutter.use_black == 'y' %}
+
+ - `make format`: reformats code
+{%- endif %}
+{%- if cookiecutter.use_flake8 == 'y' %}
+
+ - `make lint`: runs flake8
+{%- endif %}
+{%- if cookiecutter.use_mypy == 'y' %}
+
+ - `make mypy`: runs type checks by mypy
+{%- endif %}
+
  - `make test`: runs tests (see also: [Testing Flask Applications](https://flask.palletsprojects.com/en/2.1.x/testing/))
 
  - `make dist`: creates a wheel distribution (will run tests first)

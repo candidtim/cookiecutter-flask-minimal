@@ -1,8 +1,14 @@
 # cookiecutter-flask-minimal
 
-This is a **minimal** [Flask](http://flask.pocoo.org) project, with no external
-dependencies except for Flask itself. It doesn't impose how to implement the
-web application, but it is **ready for production** deployment from the start.
+*A microtemplate for a microframework.*
+
+This is a **minimalist's** **production-ready** [Flask](http://flask.pocoo.org) project template:
+
+ - no external dependencies except for [Flask](http://flask.pocoo.org) and [pytest](https://pytest.org)
+ - doesn't impose any choices of third-party libraries
+ - project set-up as per Flask documentation, including things like logging and config, testing and packaging
+ - optional and off by deafult: flake8, black and mypy configuration
+ - preserves the pure joy of developing with Flask!
 
 **Now upgraded to Flask 2 !**
 
@@ -29,7 +35,7 @@ Included:
 
  - minimal production-ready Flask application:
    an [application factory](https://flask.palletsprojects.com/en/2.1.x/patterns/appfactories/),
-   a single [Blueprint](https://flask.palletsprojects.com/en/2.1.x/blueprints/)
+   and a single [blueprint](https://flask.palletsprojects.com/en/2.1.x/blueprints/)
    with a sample static resource, template and an index view, packaged as as per
    [Larger Applications](https://flask.palletsprojects.com/en/2.1.x/patterns/packages/)
 
@@ -44,6 +50,8 @@ Included:
 
  - sample test and testing set-up, as per
    [Testing Flask Applications](https://flask.palletsprojects.com/en/2.1.x/testing/)
+
+ - optional (and off by deafult) configuration for flake8, black and mypy
 
  - Makefile with a few typical tasks automated (see generated README for details)
 

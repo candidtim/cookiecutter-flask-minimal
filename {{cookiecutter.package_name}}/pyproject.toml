@@ -7,13 +7,20 @@ name = "{{cookiecutter.package_name}}"
 version = "1.0.0"
 requires-python = ">=3.7"
 dependencies = [
-    "Flask>=2.1",
+    "Flask>=2.1,<3",
 ]
 
 [project.optional-dependencies]
-tests = [
+dev = [
     "pytest>=7,<8",
-    "pytest-runner>=6,<7",
+    {%- if cookiecutter.use_flake8 == 'y' %}
+    "flake8>=4,<5",{% endif %}
+    {%- if cookiecutter.use_black == 'y' %}
+    "black>=22.6.0",{% endif %}
+    {%- if cookiecutter.use_black == 'y' and cookiecutter.use_isort == 'y' %}
+    "isort>=5.10.1",{% endif %}
+    {%- if cookiecutter.use_mypy == 'y' %}
+    "mypy>=0.961,<1",{% endif %}
 ]
 
 [tool.setuptools.package-data]
@@ -21,3 +28,20 @@ tests = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+{%- if cookiecutter.use_black == 'y' %}
+
+[tool.black]
+line-length = 88
+{%- endif %}
+{%- if cookiecutter.use_black == 'y' and cookiecutter.use_isort == 'y' %}
+
+[tool.isort]
+profile = "black"
+{%- endif %}
+{%- if cookiecutter.use_mypy == 'y' %}
+
+[tool.mypy]
+ignore_missing_imports = true
+files = "{{cookiecutter.package_name}},tests"
+{%- endif %}

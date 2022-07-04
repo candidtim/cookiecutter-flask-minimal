@@ -1,0 +1,11 @@
+{
+    "cookiecutter": {
+        "application_name": "Your Application",
+        "package_name": "yourapplication",
+        "use_flake8": "y",
+        "use_black": "y",
+        "use_isort": "y",
+        "use_mypy": "y"
+    }
+}
+

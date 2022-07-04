@@ -1,5 +1,7 @@
 import logging.config
+
 from flask import Flask
+
 from {{cookiecutter.package_name}} import views
 
 
