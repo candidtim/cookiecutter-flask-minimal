@@ -9,7 +9,7 @@ venv:
 		venv/bin/pip install --editable ".[dev]"
 
 run: venv
-	FLASK_APP={{cookiecutter.package_name}} FLASK_ENV=development venv/bin/flask run
+	venv/bin/flask --app {{cookiecutter.package_name}} --debug run
 
 {%- if cookiecutter.use_black == 'y' %}
 
@@ -31,7 +31,7 @@ mypy: venv
 {%- endif %}
 
 test: venv
-	FLASK_ENV=development venv/bin/pytest
+	venv/bin/pytest
 
 dist: venv {% if cookiecutter.use_black == 'y' %}format-check {% endif %}{% if cookiecutter.use_flake8 == 'y' %}lint {% endif %}{% if cookiecutter.use_mypy == 'y' %}mypy {% endif %}test
 	venv/bin/pip wheel --wheel-dir dist --no-deps .
