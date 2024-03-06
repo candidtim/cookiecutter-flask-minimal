@@ -8,9 +8,14 @@ This is a **minimalist's** **production-ready** [Flask](http://flask.pocoo.org) 
  - doesn't impose any choices of third-party libraries
  - project set-up as per Flask documentation, including things like logging and config, testing and packaging
  - optional and off by deafult: flake8, black and mypy configuration
+ - optional: Poetry build tool, setuptools by defualt
  - preserves the pure joy of developing with Flask!
 
-**Now upgraded to Flask 2 !**
+**Now upgraded to Flask 3 !**
+
+If you look for the **Flask 2** version, check out the `flask2` branch. It is
+not actively maintained but is tested and known to work with the latest Flask 2
+release (2.3.3 as of the time of this writing).
 
 ## Usage
 
@@ -34,22 +39,21 @@ And then open it at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 Included:
 
  - minimal production-ready Flask application:
-   an [application factory](https://flask.palletsprojects.com/en/2.1.x/patterns/appfactories/),
-   and a single [blueprint](https://flask.palletsprojects.com/en/2.1.x/blueprints/)
+   an [application factory](https://flask.palletsprojects.com/en/3.0.x/patterns/appfactories/),
+   and a single [blueprint](https://flask.palletsprojects.com/en/3.0.x/blueprints/)
    with a sample static resource, template and an index view, packaged as as per
-   [Larger Applications](https://flask.palletsprojects.com/en/2.1.x/patterns/packages/)
+   [Larger Applications](https://flask.palletsprojects.com/en/3.0.x/patterns/packages/)
 
  - setuptools configuration to package and release the application, as well as
-   to develop locally, as per
-   [Deploying with Setuptools](https://flask.palletsprojects.com/en/2.1.x/patterns/distribute/)
+   to develop locally
 
  - configuration system, as per
-   [Configuration Handling](https://flask.palletsprojects.com/en/2.1.x/config/)
+   [Configuration Handling](https://flask.palletsprojects.com/en/3.0.x/config/)
 
- - basic [Logging](https://flask.palletsprojects.com/en/2.1.x/logging/) configuration
+ - basic [Logging](https://flask.palletsprojects.com/en/3.0.x/logging/) configuration
 
  - sample test and testing set-up, as per
-   [Testing Flask Applications](https://flask.palletsprojects.com/en/2.1.x/testing/)
+   [Testing Flask Applications](https://flask.palletsprojects.com/en/3.0.x/testing/)
 
  - optional (and off by deafult) configuration for flake8, black and mypy
 
@@ -60,18 +64,18 @@ Not included:
  - everything else: there is no SQLAlchemy, or MongoKit, or Bootstrap CSS, or
    React, or whatever else; it is up to you to chose how to implement your
    application;
-   [Patterns for Flask](https://flask.palletsprojects.com/en/2.1.x/patterns/)
+   [Patterns for Flask](https://flask.palletsprojects.com/en/3.0.x/patterns/)
    documents well how to easily add these if necessary
 
  - there are no "sample" features or examples of how to use Flask; this
    template is not intended as a tutorial, but as a well-configured starting
    point for a new implementation; refer to the
-   [Flask documentation](https://flask.palletsprojects.com/en/2.1.x/quickstart/)
+   [Flask documentation](https://flask.palletsprojects.com/en/3.0.x/quickstart/)
    to learn Flask if necessary
 
  - no choice on how to deploy the application is made, no WSGI container is
    chosen; see
-   [Deploying to Production](https://flask.palletsprojects.com/en/2.1.x/deploying/)
+   [Deploying to Production](https://flask.palletsprojects.com/en/3.0.x/deploying/)
    for the options most suitable for your infrastructure
 
 # Contributions
@@ -90,6 +94,6 @@ If you do a change, use `make test` from root directory to test the updated temp
 # Attributions
 
 Configuration of this entire project template is based on
-[Flask documentation](https://flask.palletsprojects.com/en/2.1.x/).
+[Flask documentation](https://flask.palletsprojects.com/en/3.0.x/).
 Please, note however, that this template is not guaranteed to follow Flask
 documentation precisely.

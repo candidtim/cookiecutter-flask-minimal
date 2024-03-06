@@ -7,20 +7,20 @@ name = "{{cookiecutter.package_name}}"
 version = "1.0.0"
 requires-python = ">=3.7"
 dependencies = [
-    "Flask>=2.2,<3",
+    "Flask>=3.0.2,<4",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7,<8",
+    "pytest>=8,<9",
     {%- if cookiecutter.use_flake8 == 'y' %}
-    "flake8>=4,<5",{% endif %}
+    "flake8>=7,<8",{% endif %}
     {%- if cookiecutter.use_black == 'y' %}
-    "black>=22.6.0",{% endif %}
+    "black>=24.2.0,<25",{% endif %}
     {%- if cookiecutter.use_black == 'y' and cookiecutter.use_isort == 'y' %}
-    "isort>=5.10.1",{% endif %}
+    "isort>=5.13.1,<6",{% endif %}
     {%- if cookiecutter.use_mypy == 'y' %}
-    "mypy>=0.961,<1",{% endif %}
+    "mypy>=1.8.0,<2",{% endif %}
 ]
 
 [tool.setuptools.package-data]
