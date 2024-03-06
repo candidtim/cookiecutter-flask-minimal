@@ -2,8 +2,10 @@
 __pycache__/
 
 # Files created by this set up:
+{%- if cookiecutter.use_poetry != 'y' %}
 venv/
 build/
+{% endif %}
 dist/
 *.egg-info/
 .pytest_cache/

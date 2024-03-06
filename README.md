@@ -8,7 +8,7 @@ This is a **minimalist's** **production-ready** [Flask](http://flask.pocoo.org) 
  - doesn't impose any choices of third-party libraries
  - project set-up as per Flask documentation, including things like logging and config, testing and packaging
  - optional and off by deafult: flake8, black and mypy configuration
- - optional: Poetry build tool, setuptools by defualt
+ - optional: [Poetry](https://python-poetry.org/) build tool, setuptools by defualt
  - preserves the pure joy of developing with Flask!
 
 **Now upgraded to Flask 3 !**
@@ -44,8 +44,15 @@ Included:
    with a sample static resource, template and an index view, packaged as as per
    [Larger Applications](https://flask.palletsprojects.com/en/3.0.x/patterns/packages/)
 
- - setuptools configuration to package and release the application, as well as
-   to develop locally
+ - setuptools (or Poetry) configuration to package and release the application,
+   as well as to develop locally
+
+    - side note: [Poetry](https://python-poetry.org/) is a popular build tool
+      and it provides a well-structured and
+      [well-documented](https://python-poetry.org/docs/) development
+      environment; but, this also means that the generated project will not
+      explain or document its usage and you would need to refer to the Poetry
+      documentation
 
  - configuration system, as per
    [Configuration Handling](https://flask.palletsprojects.com/en/3.0.x/config/)

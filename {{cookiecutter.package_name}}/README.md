@@ -15,9 +15,31 @@ And open it in the browser at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 Python >=3.7
 
 ## Development environment
+{%- if cookiecutter.use_poetry == 'y' %}
+
+This project uses [Poetry](https://python-poetry.org/docs/).
+
+Quick start:
+
+    poetry install
+
+    poetry run pytest
+    {%- if cookiecutter.use_black == 'y' %}
+    poetry run black [--check] .{%- endif %}
+    {%- if cookiecutter.use_isort == 'y' %}
+    poetry run isort [--check] .{%- endif %}
+    {%- if cookiecutter.use_flake8 == 'y' %}
+    poetry run flake8 .{% endif %}
+    {%- if cookiecutter.use_mypy == 'y' %}
+    poetry run mypy{% endif %}
+
+Run a development server in debug mode (changes in are reloaded automatically):
+
+    poetry run flask --app {{cookiecutter.package_name}} --debug run
+{%- else %}
 
  - `make venv`: creates a virtualenv with dependencies and this application
-   installed (latter is installed in [development mode](http://setuptools.readthedocs.io/en/latest/setuptools.html#development-mode))
+   installed in [development mode](http://setuptools.readthedocs.io/en/latest/setuptools.html#development-mode)
 
  - `make run`: runs a development server in debug mode (changes in source code
    are reloaded automatically)
@@ -42,10 +64,9 @@ Python >=3.7
  - `make clean`: removes virtualenv and build artifacts
 
  - add application dependencies in `pyproject.toml` under `project.dependencies`;
-   add development dependencies under `project.optional-dependencies.*`
-
- - to modify configuration, pass it in environment variables prefixed with
-   `FLASK_`; e.g., `FLASK_DEBUG`, etc.;
+   add development dependencies under `project.optional-dependencies.*`; run
+   `make clean && make venv` to reinstall the environment
+{%- endif %}
 
 ## Configuration
 

@@ -1,3 +1,31 @@
+{%- if cookiecutter.use_poetry == 'y' -%}
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "{{cookiecutter.package_name}}"
+version = "1.0.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+include = ["**/static/**/*", "**/templates/**/*"]
+
+[tool.poetry.dependencies]
+python = ">=3.8.1,<4"
+flask = ">=3.0.2,<4"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8,<9"
+{%- if cookiecutter.use_flake8 == 'y' %}
+flake8 = ">=7,<8"{% endif %}
+{%- if cookiecutter.use_black == 'y' %}
+black = ">=24.2.0,<25"{% endif %}
+{%- if cookiecutter.use_black == 'y' and cookiecutter.use_isort == 'y' %}
+isort = ">=5.13.1,<6"{% endif %}
+{%- if cookiecutter.use_mypy == 'y' %}
+mypy = ">=1.8.0,<2"{% endif %}
+{%- else -%}
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
@@ -5,7 +33,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "{{cookiecutter.package_name}}"
 version = "1.0.0"
-requires-python = ">=3.7"
+requires-python = ">=3.8.1,<4"
 dependencies = [
     "Flask>=3.0.2,<4",
 ]
@@ -25,6 +53,7 @@ dev = [
 
 [tool.setuptools.package-data]
 "*" = ["**/static/**/*", "**/templates/**/*"]
+{%- endif %}
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

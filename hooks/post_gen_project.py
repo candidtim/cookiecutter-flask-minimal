@@ -2,6 +2,8 @@ import os
 
 REMOVE_PATHS = [
     '{% if cookiecutter.use_flake8 != "y" %} setup.cfg {% endif %}',
+    '{% if cookiecutter.use_poetry == "y" %} setup.py {% endif %}',
+    '{% if cookiecutter.use_poetry == "y" %} Makefile {% endif %}',
 ]
 
 for path in REMOVE_PATHS:

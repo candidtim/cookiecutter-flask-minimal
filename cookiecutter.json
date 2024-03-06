@@ -1,6 +1,7 @@
 {
   "application_name": "Your Application",
   "package_name": "yourapplication",
+  "use_poetry": "n",
   "use_flake8": "n",
   "use_black": "n",
   "use_isort": "n",
