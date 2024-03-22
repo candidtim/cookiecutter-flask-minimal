@@ -17,6 +17,9 @@ If you look for the **Flask 2** version, check out the `flask2` branch. It is
 not actively maintained but is tested and known to work with the latest Flask 2
 release (2.3.3 as of the time of this writing).
 
+Looking for a feature-complete, yet minimalistic web app starter kit? Check out
+[cookicutter-flask-boring](https://github.com/candidtim/cookiecutter-flask-boring).
+
 ## Usage
 
 Install [cookiecutter](https://github.com/audreyr/cookiecutter):
