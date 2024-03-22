@@ -3,16 +3,24 @@
 {{cookiecutter.application_name}} description
 
 ## Quick Start
+{%- if cookiecutter.use_poetry == 'y' %}
+
+Install the dependencies and run the application:
+
+    poetry install
+    poetry run flask --debug run
+{%- else %}
 
 Run the application:
 
     make run
+{%- endif %}
 
-And open it in the browser at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+And open it in the browser at [http://localhost:5000/](http://localhost:5000/)
 
 ## Prerequisites
 
-Python >=3.7
+Python >=3.8
 
 ## Development environment
 {%- if cookiecutter.use_poetry == 'y' %}
@@ -70,7 +78,7 @@ Run a development server in debug mode (changes in are reloaded automatically):
 
 ## Configuration
 
-Default configuration is loaded from `{{cookiecutter.package_name}}.default_settings` and can be
+Default configuration is loaded from `{{cookiecutter.package_name}}.defaults` and can be
 overriden by environment variables with a `FLASK_` prefix. See
 [Configuring from Environment Variables](https://flask.palletsprojects.com/en/3.0.x/config/#configuring-from-environment-variables).
 
