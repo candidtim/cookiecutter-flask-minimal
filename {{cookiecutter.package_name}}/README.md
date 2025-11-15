@@ -8,7 +8,7 @@
 Install the dependencies and run the application:
 
     poetry install
-    poetry run flask --debug run
+    poetry run flask --app {{cookiecutter.package_name}} --debug run
 {%- else %}
 
 Run the application:
@@ -20,7 +20,7 @@ And open it in the browser at [http://localhost:5000/](http://localhost:5000/)
 
 ## Prerequisites
 
-Python >=3.8
+Python >=3.10
 
 ## Development environment
 {%- if cookiecutter.use_poetry == 'y' %}

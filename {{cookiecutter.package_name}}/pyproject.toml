@@ -12,19 +12,19 @@ readme = "README.md"
 include = ["**/static/**/*", "**/templates/**/*"]
 
 [tool.poetry.dependencies]
-python = ">=3.8.1,<4"
-flask = ">=3.0.2,<4"
+python = ">=3.10,<4"
+flask = ">=3.1.2,<4"
 
 [tool.poetry.group.dev.dependencies]
-pytest = ">=8,<9"
+pytest = ">=9,<10"
 {%- if cookiecutter.use_flake8 == 'y' %}
 flake8 = ">=7,<8"{% endif %}
 {%- if cookiecutter.use_black == 'y' %}
-black = ">=24.2.0,<25"{% endif %}
+black = ">=25.11.0,<26"{% endif %}
 {%- if cookiecutter.use_black == 'y' and cookiecutter.use_isort == 'y' %}
-isort = ">=5.13.1,<6"{% endif %}
+isort = ">=7,<8"{% endif %}
 {%- if cookiecutter.use_mypy == 'y' %}
-mypy = ">=1.8.0,<2"{% endif %}
+mypy = ">=1.18.2,<2"{% endif %}
 {%- else -%}
 [build-system]
 requires = ["setuptools"]
@@ -40,15 +40,15 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=8,<9",
+    "pytest>=9,<10",
     {%- if cookiecutter.use_flake8 == 'y' %}
     "flake8>=7,<8",{% endif %}
     {%- if cookiecutter.use_black == 'y' %}
-    "black>=24.2.0,<25",{% endif %}
+    "black>=25.11.0,<26",{% endif %}
     {%- if cookiecutter.use_black == 'y' and cookiecutter.use_isort == 'y' %}
-    "isort>=5.13.1,<6",{% endif %}
+    "isort>=7,<8",{% endif %}
     {%- if cookiecutter.use_mypy == 'y' %}
-    "mypy>=1.8.0,<2",{% endif %}
+    "mypy>=1.18.2,<2",{% endif %}
 ]
 
 [tool.setuptools.package-data]
