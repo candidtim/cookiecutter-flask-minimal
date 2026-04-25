@@ -3,12 +3,13 @@
 {{cookiecutter.application_name}} description
 
 ## Quick Start
-{%- if cookiecutter.use_poetry == 'y' %}
+{%- if cookiecutter.use_uv == 'y' %}
 
 Install the dependencies and run the application:
 
-    poetry install
-    poetry run flask --app {{cookiecutter.package_name}} --debug run
+    uv lock  # <- first time only, or after a change in declared dependencies
+    uv sync
+    uv run flask --app {{cookiecutter.package_name}} --debug run
 {%- else %}
 
 Run the application:
@@ -23,27 +24,26 @@ And open it in the browser at [http://localhost:5000/](http://localhost:5000/)
 Python >=3.10
 
 ## Development environment
-{%- if cookiecutter.use_poetry == 'y' %}
+{%- if cookiecutter.use_uv == 'y' %}
 
-This project uses [Poetry](https://python-poetry.org/docs/).
+This project uses [uv](https://docs.astral.sh/uv/).
 
 Quick start:
 
-    poetry install
+    uv lock  # creates or updates a lock file
 
-    poetry run pytest
-    {%- if cookiecutter.use_black == 'y' %}
-    poetry run black [--check] .{%- endif %}
-    {%- if cookiecutter.use_isort == 'y' %}
-    poetry run isort [--check] .{%- endif %}
-    {%- if cookiecutter.use_flake8 == 'y' %}
-    poetry run flake8 .{% endif %}
+    uv sync
+
+    uv run pytest
+    {%- if cookiecutter.use_ruff == 'y' %}
+    uv run ruff format [--check]
+    uv run ruff check [--fix] [--extend-select=I]{%- endif %}
     {%- if cookiecutter.use_mypy == 'y' %}
-    poetry run mypy{% endif %}
+    uv run mypy{% endif %}
 
 Run a development server in debug mode (changes in are reloaded automatically):
 
-    poetry run flask --app {{cookiecutter.package_name}} --debug run
+    uv run flask --app {{cookiecutter.package_name}} --debug run
 {%- else %}
 
  - `make venv`: creates a virtualenv with dependencies and this application
@@ -52,13 +52,11 @@ Run a development server in debug mode (changes in are reloaded automatically):
  - `make run`: runs a development server in debug mode (changes in source code
    are reloaded automatically)
 
-{%- if cookiecutter.use_black == 'y' %}
+{%- if cookiecutter.use_ruff == 'y' %}
 
  - `make format`: reformats code
-{%- endif %}
-{%- if cookiecutter.use_flake8 == 'y' %}
 
- - `make lint`: runs flake8
+ - `make lint`: runs ruff
 {%- endif %}
 {%- if cookiecutter.use_mypy == 'y' %}
 

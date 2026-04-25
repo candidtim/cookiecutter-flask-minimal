@@ -2,23 +2,26 @@
 
 *A microtemplate for a microframework.*
 
-This is a **minimalist's** **production-ready** [Flask](http://flask.pocoo.org) project template:
+This is a **minimalist's** **production-ready** [Flask](https://flask.palletsprojects.com) project template:
 
- - no external dependencies except for [Flask](http://flask.pocoo.org) and [pytest](https://pytest.org)
- - doesn't impose any choices of third-party libraries
- - project set-up as per Flask documentation, including things like logging and config, testing and packaging
- - optional and off by deafult: flake8, black and mypy configuration
- - optional: [Poetry](https://python-poetry.org/) build tool, setuptools by defualt
+ - zero bloat
+ - no dependencies except for [Flask](https://flask.palletsprojects.com) and [pytest](https://pytest.org)
+ - complete project set-up as per Flask documentation, including things like logging, configuration, testing and packaging
  - preserves the pure joy of developing with Flask!
 
-**Now upgraded to Flask 3 !**
+Also includes these recommended, but fully **optional** features:
 
-If you look for the **Flask 2** version, check out the `flask2` branch. It is
-not actively maintained but is tested and known to work with the latest Flask 2
-release (2.3.3 as of the time of this writing).
+ - [uv](https://docs.astral.sh/uv/) package manager (otherwise the project uses traditional setuptools)
+ - [ruff](https://astral.sh/ruff)
+ - [mypy](https://www.mypy-lang.org)
 
-Looking for a feature-complete, yet minimalistic web app starter kit? Check out
-[cookicutter-flask-boring](https://github.com/candidtim/cookiecutter-flask-boring).
+**Up to date with Flask 3 !**
+
+A few older configurations are available, but not actively supported:
+
+ - for **Flask 2** check out the `flask2` branch, it is last known to work with Flask 2.3.3
+ - for **Poetry**, **flake8**, **black** and **isort** configurations check out
+   the `poetry` branch, last known to work with Flask 3.0.2 and Poetry 1.x.
 
 ## Usage
 
@@ -47,16 +50,6 @@ Included:
    with a sample static resource, template and an index view, packaged as as per
    [Larger Applications](https://flask.palletsprojects.com/en/3.0.x/patterns/packages/)
 
- - setuptools (or Poetry) configuration to package and release the application,
-   as well as to develop locally
-
-    - side note: [Poetry](https://python-poetry.org/) is a popular build tool
-      and it provides a well-structured and
-      [well-documented](https://python-poetry.org/docs/) development
-      environment; but, this also means that the generated project will not
-      explain or document its usage and you would need to refer to the Poetry
-      documentation
-
  - configuration system, as per
    [Configuration Handling](https://flask.palletsprojects.com/en/3.0.x/config/)
 
@@ -65,15 +58,17 @@ Included:
  - sample test and testing set-up, as per
    [Testing Flask Applications](https://flask.palletsprojects.com/en/3.0.x/testing/)
 
- - optional (and off by deafult) configuration for flake8, black and mypy
+ - `setuptools` or `uv` development environment configuration, including a way
+   to package and release the application
 
- - Makefile with a few typical tasks automated (see generated README for details)
+ - optional, yet highly recommended, configuration for `ruff` and `mypy`
+
+ - well-documented development environment (see the generated `README.md`)
 
 Not included:
 
- - everything else: there is no SQLAlchemy, or MongoKit, or Bootstrap CSS, or
-   React, or whatever else; it is up to you to chose how to implement your
-   application;
+ - everything else: there is no SQLAlchemy, MongoKit, Bootstrap CSS, React, or
+   anything else; it is up to you to chose how to implement your application;
    [Patterns for Flask](https://flask.palletsprojects.com/en/3.0.x/patterns/)
    documents well how to easily add these if necessary
 

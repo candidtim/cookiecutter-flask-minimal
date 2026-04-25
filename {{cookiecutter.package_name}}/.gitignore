@@ -2,11 +2,14 @@
 __pycache__/
 
 # Files created by this set up:
-{%- if cookiecutter.use_poetry != 'y' %}
-venv/
+.venv/
+dist/
+{%- if cookiecutter.use_uv != 'y' %}
 build/
 {% endif %}
-dist/
 *.egg-info/
 .pytest_cache/
 .mypy_cache/
+{%- if cookiecutter.use_ruff == 'y' %}
+.ruff_cache/
+{%- endif %}

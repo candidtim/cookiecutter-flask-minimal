@@ -1,0 +1,10 @@
+{
+    "cookiecutter": {
+        "application_name": "Your Application",
+        "package_name": "yourapplication",
+        "use_uv": "n",
+        "use_ruff": "y",
+        "use_mypy": "y"
+    }
+}
+
